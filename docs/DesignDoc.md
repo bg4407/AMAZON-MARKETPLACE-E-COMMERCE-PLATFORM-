@@ -299,19 +299,18 @@ baskets from the underlying storage into Helper instances.
 **All user stories have passed their acceptance criteria tests.**
 
 ### Unit Testing and Code Coverage
-> _**[Sprint 4]** Discuss your unit testing strategy. Report on the code coverage
-> achieved from unit testing of the code base. Discuss the team's
-> coverage targets, why you selected those values, and how well your
-> code coverage met your targets._
 
->_**[Sprint 2 & 4]** **Include images of your code coverage report.** If there are any anomalies, discuss those._
+**Strategy**
+We targeted 90% code coverage across the project with our unit tests because 
+this would ensureminimal gaps in the coverage while still being achievable.
 
 **U-fund API Class Level Code Coverage:**
 ![Replace with Class Level Code Coverage, etc.](Code-Coverage.png)
 
 **U-fund API Controller Code Coverage:**
 ![Replace with Controller Tier Code Coverage, etc.](Controller-Code-Coverage.png)
-  - **Controller**: The controller tier has 76% code coverage overall.
+  - **Controller**: The controller tier has 76% code coverage overall, primarily due to the large size of 
+  HelperController making it difficult to test.
 
 **U-fund API Model Code Coverage:**
 ![Replace with your Model Tier Code Coverage, etc.](Model-Code-Coverage.png)
