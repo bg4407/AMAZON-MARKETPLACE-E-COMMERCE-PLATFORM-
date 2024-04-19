@@ -85,7 +85,48 @@ This section describes the features of the application.
     - When a Helper purchase all the need from the Cupboard, another Helper will not be able to see the needs from the Cupboard anymore until the Admin restock
 
 ### MVP Features
->  _**[Sprint 4]** Provide a list of top-level Epics and/or Stories of the MVP._
+
+**Create New Need:** AS a Developer I WANT to submit a request to create a new need (name [unique], cost, quantity, type)
+SO THAT it is added to the cupboard.
+
+**Get a Single Need:** AS a Developer I WANT to submit a request to get a single need SO THAT I can access 
+the cost, quantity and type.
+
+**Update a Need:** AS a Developer I WANT to submit a request to update a need SO THAT I can change important information.
+
+**Delete a Single Need:** As a Developer I want to submit a request to delete a single need SO THAT it is no longer in the cupboard.
+
+**Get Entire Cupboard:** AS A Developer I WANT to submit a request to get the cupboard SO THAT I can update needs in the cupboard.
+
+**Search for Needs:** AS a Developer I WANT to submit a request to get the the needs in the cupboard whose name contains the
+given text, SO THAT I have access to only that subset of needs.
+
+**Browse Needs:** AS a Helper I WANT to see a list of needs SO THAT I choose which ones to contribute to.
+
+**Helper Authentication:** AS a Helper I WANT to login securely with my credentials SO THAT I can purchase needs from the cupboard.
+
+**Manager Authentication:** As a Manager I WANT to login securely with my credentials SO THAT I can manage the cupboards.
+
+**Saved Funding Basket:** AS a Helper I WANT TO be able to logout with the contents of my funding basket saved SO THAT I can manage my support efficiently without the fear of losing progress.
+
+
+***Modify Cupboards (Epic):***  AS a Manager I WANT to be able to modify and populate the cupboard SO THAT I can present the best needs for the helper to fund.
+
+  **Add Need (Manager):** AS a Manager I WANT to add a need to the Needs Cupboard SO THAT it will be available for Helpers to select.
+
+  **Delete Need (Manager):** AS a Manager I WANT to remove a need from the Needs Cupboard SO THAT it will no longer be available 
+   for Helpers to select.
+
+***Manage Funding Basket (Epic):*** AS a Helper I WANT to be able to modify my funding basket by adding or deleting needs from 
+it SO THAT I can effectively contribute to the organization.
+    
+**Add Needs (Helper):** AS a Helper I WANT to add needs to my funding basket SO THAT I can buy multiple needs at once.
+
+**Delete Needs (Helper):** AS a Helper I WANT to delete needs from my funding basket SO THAT I can easily manage and refine my selection, ensuring my contributions align with my current preferences and priorities.
+
+**View Funding Basket:** AS A Helper I WANT TO view the items in my Funding Basket SO THAT I can decide what items to fund.
+
+**Check Out Needs:** AS a Helper I WANT to buy the needs SO THAT I can efficiently assist and address the unique challenges faced by the non-profit organization.
 
 ### Enhancements
 > _**[Sprint 4]** Describe what enhancements you have implemented for the project._
