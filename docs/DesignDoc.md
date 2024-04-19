@@ -3,11 +3,6 @@ geometry: margin=1in
 ---
 # PROJECT Design Documentation
 
-> _The following template provides the headings for your Design
-> Documentation.  As you edit each section make sure you remove these
-> commentary 'blockquotes'; the lines that start with a > character
-> and appear in the generated PDF in italics but do so only **after** all team members agree that the requirements for that section and current Sprint have been met. **Do not** delete future Sprint expectations._
-
 ## Team Information
 * Team name: BCNS
 * Team members
@@ -21,13 +16,11 @@ geometry: margin=1in
 This is a project which creates a website for a food charity. In this website, the user is able to login as a user or an admin using a username and password. The admin is able to view the needs cupboard and add or delete needs from it. The Helper is able to view the needs in the needs cupboard that the admin has added. The Helper can also search for needs using a search bar and have access to view and modify the funding basket. Items in the funding basket persist even after the Helper logs out and logs back in. Users can also send feedback to the admin, which the admin can see after they log in. The users can "check out" needs when they have decided to contribute to them, and they can also see a history of previous needs they have contributed to that persists through log in and log outs.
 
 ### Purpose
-> _**[Sprint 2 & 4] Provide a very brief statement about the project and the most important user group and user goals.
 
 The U-Fund Chairty webpage will allow Helpers to donate money to causes and items in order to assist the food bank. This will
 allow people with money to spare to assist those who are in need.
 
 ### Glossary and Acronyms
-> _**[Sprint 2 & 4]** Provide a table of terms and acronyms._
 
 | Term    |            Definition               |
 |---------|-------------------------------------|
@@ -47,11 +40,6 @@ allow people with money to spare to assist those who are in need.
 ## Requirements
 
 This section describes the features of the application.
-
-> _In this section you do not need to be exhaustive and list every
-> story.  Focus on top-level features from the Vision document and
-> maybe Epics and critical Stories._
-
   - Admin can add, remove, and modify needs in the needs cupboard
   - Helper can browse needs in the needs cupboard and search using keywords
   - Helper can add/delete products from their cart
@@ -59,7 +47,6 @@ This section describes the features of the application.
   - Helper can checkout their needs from the basket
 
 ### Definition of MVP
-> _**[Sprint 2 & 4]** Provide a simple description of the Minimum Viable Product._
 
   - Minimal Authentication for Helper/U-fund Manager login & logout
     - A Helper can create a new account with a new username and password
@@ -201,8 +188,6 @@ This section describes the web interface flow; this is how the user views and in
  >* _Include other details such as attributes and method signatures that you think are needed to support the level of detail in your discussion._
 
 ### ViewModel Tier
-> _**[Sprint 1]** List the classes supporting this tier and provide a description of there purposes_
-
 - **NeedController:** Responds to HTML requests for the Needs resource. It connects the Need UI to the Need model
 in the backend and will create, update, and get needs from the needs cupboard as necessary, all by accessing
 methods in NeedDAO objects.
@@ -233,8 +218,6 @@ get, and update Helpers as well as their Funding Baskets. Also authenticates the
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
 ### Model Tier
-> _**[Sprint 1]** List the classes supporting this tier and provide a description of there purpose._
-
 **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
 storage into Need instances.
@@ -282,19 +265,14 @@ baskets from the underlying storage into Helper instances.
 > _This section will provide information about the testing performed and the results of the testing._
 
 ### Acceptance Testing
-> **[Sprint 2 & 4]** Report on the number of user stories that have passed all their
-> acceptance criteria tests, the number that have some acceptance
-> criteria tests failing, and the number of user stories that
-> have not had any testing yet. Highlight the issues found during
-> acceptance testing and if there are any concerns._
-
-- **23** user stories in total, covering:
+- **29** user stories in total, covering:
   - Admins being able to edit needs from the cupboard
   - Helpers being able to login/creating their account
   - Helpers being able to edit needs from their basket
   - Helpers being able to checkout their basket
   - Helpers being able to search for needs
   - Persistence of the shopping carts
+  - 10% Features: creating/viewing feedbacks and display purchase history
 
 **All user stories have passed their acceptance criteria tests.**
 
@@ -321,8 +299,6 @@ this would ensureminimal gaps in the coverage while still being achievable.
   - **Persistence**: The persistence unit test is well done.
  
 ## Ongoing Rationale
->_**[Sprint 1, 2, 3 & 4]** Throughout the project, provide a time stamp **(yyyy/mm/dd): Sprint # and description** of any _**major**_ team decisions or design milestones/changes and corresponding justification._
-
   - (2024/2/10): Sprint 1
     - The 10% feature will be Helper Feedback and Purchase History Page
   - (2024/3/19): Sprint 2
