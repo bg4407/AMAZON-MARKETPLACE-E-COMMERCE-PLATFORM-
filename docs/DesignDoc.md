@@ -109,7 +109,6 @@ given text, SO THAT I have access to only that subset of needs.
 
 **Saved Funding Basket:** AS a Helper I WANT TO be able to logout with the contents of my funding basket saved SO THAT I can manage my support efficiently without the fear of losing progress.
 
-
 ***Modify Cupboards (Epic):***  AS a Manager I WANT to be able to modify and populate the cupboard SO THAT I can present the best needs for the helper to fund.
 
   **Add Need (Manager):** AS a Manager I WANT to add a need to the Needs Cupboard SO THAT it will be available for Helpers to select.
@@ -129,8 +128,20 @@ it SO THAT I can effectively contribute to the organization.
 **Check Out Needs:** AS a Helper I WANT to buy the needs SO THAT I can efficiently assist and address the unique challenges faced by the non-profit organization.
 
 ### Enhancements
-> _**[Sprint 4]** Describe what enhancements you have implemented for the project._
 
+**View Purchases:** AS a Helper I WANT to view a history of my past purchases so that I can track what 
+needs I have contributed to and make informed decisions.
+- With this feature, a Helper is able to see a list of the
+items they have previously purchased by viewing a new section of the Funding Basket page.
+
+**Send Feedback (Helper):** AS a Helper I WANT to send a feedback message to the Manager 
+SO THAT I can make suggestions or notify the Manager of problems. 
+
+**View Feedback (Manager):** AS a Manager I WANT to view a list of received 
+feedback messages SO THAT I can keep informed of the Helpers' concerns and suggestions.
+
+- For Helpers, an ability to send a feedback message is added. And the U-Fund Manager has access to a new page 
+in which all feedback messages sent from the Helpers can be viewed.
 
 ## Application Domain
 
