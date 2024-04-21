@@ -11,16 +11,16 @@ geometry: margin=1in
   * Borneil Gope
   * Cameron Marsh
 
-## Executive Summary
+## **Executive Summary**
 
 This is a project which creates a website for a food charity. In this website, the user is able to login as a user or an admin using a username and password. The admin is able to view the needs cupboard and add or delete needs from it. The Helper is able to view the needs in the needs cupboard that the admin has added. The Helper can also search for needs using a search bar and have access to view and modify the funding basket. Items in the funding basket persist even after the Helper logs out and logs back in. Users can also send feedback to the admin, which the admin can see after they log in. The users can "check out" needs when they have decided to contribute to them, and they can also see a history of previous needs they have contributed to that persists through log in and log outs.
 
-### Purpose
+### **Purpose**
 
 The U-Fund Chairty webpage will allow Helpers to donate money to causes and items in order to assist the food bank. This will
 allow people with money to spare to assist those who are in need.
 
-### Glossary and Acronyms
+### **Glossary and Acronyms**
 
 | Term    |            Definition               |
 |---------|-------------------------------------|
@@ -37,7 +37,7 @@ allow people with money to spare to assist those who are in need.
 | Cupboard|  Access to the needs                |
 
 
-## Requirements
+## **Requirements**
 
 This section describes the features of the application.
   - Admin can add, remove, and modify needs in the needs cupboard
@@ -46,7 +46,7 @@ This section describes the features of the application.
   - Helper can log in to an existing account with username and password, or register should the account not exist
   - Helper can checkout their needs from the basket
 
-### Definition of MVP
+### **Definition of MVP**
 
   - Minimal Authentication for Helper/U-fund Manager login & logout
     - A Helper can create a new account with a new username and password
@@ -71,7 +71,7 @@ This section describes the features of the application.
     - The contents of the Helper basket in the basket will remain the same when the Helper log out and log back in.
     - When a Helper purchase all the need from the Cupboard, another Helper will not be able to see the needs from the Cupboard anymore until the Admin restock
 
-### MVP Features
+### **MVP Features**
 
 **Create New Need:** AS a Developer I WANT to submit a request to create a new need (name [unique], cost, quantity, type)
 SO THAT it is added to the cupboard.
@@ -114,7 +114,7 @@ it SO THAT I can effectively contribute to the organization.
 
 **Check Out Needs:** AS a Helper I WANT to buy the needs SO THAT I can efficiently assist and address the unique challenges faced by the non-profit organization.
 
-### Enhancements
+### **Enhancements**
 
 **View Purchases:** AS a Helper I WANT to view a history of my past purchases so that I can track what 
 needs I have contributed to and make informed decisions.
@@ -130,7 +130,7 @@ feedback messages SO THAT I can keep informed of the Helpers' concerns and sugge
 - For Helpers, an ability to send a feedback message is added. And the U-Fund Manager has access to a new page 
 in which all feedback messages sent from the Helpers can be viewed.
 
-## Application Domain
+## **Application Domain**v
 
 This section describes the application domain.
 
@@ -141,11 +141,11 @@ This section describes the application domain.
 > to each other._
 
 
-## Architecture and Design
+## **Architecture and Design**
 
 This section describes the application architecture.
 
-### Summary
+### **Summary**
 
 The following Tiers/Layers model shows a high-level view of the webapp's architecture. 
 **NOTE**: detailed diagrams are required in later sections of this document.
@@ -161,14 +161,14 @@ The View is the client-side SPA built with Angular utilizing HTML, CSS and TypeS
 Both the ViewModel and Model are built using Java and Spring Framework. Details of the components within these tiers are supplied below.
 
 
-### Overview of User Interface
+### **Overview of User Interface**
 
 This section describes the web interface flow; this is how the user views and interacts with the web application.
 
 > _Provide a summary of the application's user interface.  Describe, from the user's perspective, the flow of the pages in the web application._
 
 
-### View Tier
+### **View Tier**
 > _**[Sprint 4]** Provide a summary of the View Tier UI of your architecture.
 > Describe the types of components in the tier and describe their
 > responsibilities.  This should be a narrative description, i.e. it has
@@ -186,7 +186,7 @@ This section describes the web interface flow; this is how the user views and in
  >* _Correct labeling of relationships with proper notation for the relationship type, multiplicities, and navigation information will be important._
  >* _Include other details such as attributes and method signatures that you think are needed to support the level of detail in your discussion._
 
-### ViewModel Tier
+### **ViewModel Tier**
 - **NeedController:** Responds to HTML requests for the Needs resource. It connects the Need UI to the Need model
 in the backend and will create, update, and get needs from the needs cupboard as necessary, all by accessing
 methods in NeedDAO objects.
@@ -216,7 +216,7 @@ get, and update Helpers as well as their Funding Baskets. Also authenticates the
 > 
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
-### Model Tier
+### **Model Tier**
 **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
 storage into Need instances.
@@ -259,9 +259,9 @@ baskets from the underlying storage into Helper instances.
 
 > _**[Sprint 4]** Discuss **future** refactoring and other design improvements your team would explore if the team had additional time._
 
-## Testing
+## **Testing**
 
-### Acceptance Testing
+### **Acceptance Testing**
 - **29** user stories in total, covering:
   - Admins being able to edit needs from the cupboard
   - Helpers being able to login/creating their account
@@ -273,7 +273,7 @@ baskets from the underlying storage into Helper instances.
 
 **All user stories have passed their acceptance criteria tests.**
 
-### Unit Testing and Code Coverage
+### **Unit Testing and Code Coverage**
 
 **Strategy**
 We targeted 90% code coverage across the project with our unit tests because 
@@ -295,7 +295,7 @@ this would ensureminimal gaps in the coverage while still being achievable.
 ![Replace with your Persistence Tier Code Coverage, etc.](Persistence-Code-Coverage.png)
   - **Persistence**: The persistence unit test is well done.
  
-## Ongoing Rationale
+## **Ongoing Rationale**
   - (2024/2/10): Sprint 1
     - The 10% feature will be Helper Feedback and Purchase History Page
   - (2024/3/19): Sprint 2
