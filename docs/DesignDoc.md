@@ -17,7 +17,7 @@ This is a project which creates a website for a food charity. In this website, t
 
 ### **Purpose**
 
-The U-Fund Chairty webpage will allow Helpers to donate money to causes and items in order to assist the food bank. This will
+The U-Fund Charity webpage will allow Helpers to donate money to causes and items in order to assist the food bank. This will
 allow people with money to spare to assist those who are in need.
 
 ### **Glossary and Acronyms**
@@ -168,11 +168,15 @@ This section describes the web interface flow; this is how the user views and in
 > responsibilities.  This should be a narrative description, i.e. it has
 > a flow or "story line" that the reader can follow._
 
-> _**[Sprint 4]** You must  provide at least **2 sequence diagrams** as is relevant to a particular aspects 
-> of the design that you are describing.  (**For example**, in a shopping experience application you might create a 
-> sequence diagram of a customer searching for an item and adding to their cart.)
-> As these can span multiple tiers, be sure to include an relevant HTTP requests from the client-side to the server-side 
-> to help illustrate the end-to-end flow._
+
+
+### **Sequence Diagram**
+![](Sequence-Diagram.png)
+
+#### **Feedback Sequence Diagram**
+![](Feedback-Sequence-Diagram.png)
+
+
 
 > _**[Sprint 4]** To adequately show your system, you will need to present the **class diagrams** where relevant in your design. Some additional tips:_
  >* _Class diagrams only apply to the **ViewModel** and **Model** Tier_
@@ -277,16 +281,22 @@ to accompany them, such as the user.service and feedback.service files. The hier
 
 ### **Static Code Analysis Overall Score**
 ![](Static-Code-Analysis-Overall.png)
+- **Analysis**: Overall, both the UI and API components are well implemented and tested.
 
 #### **Static Code Analysis Issue 1**
 ![](Static-Code-Analysis-Issue1.png)
+- **Analysis**: A shorthand property defined after a longhand property will completely override the value defined in the longhand property making the longhand one useless. The code should be refactored to consider the longhand property or to remove it completely.
+- **Recommendations**: Move the 'background' field on top of the 'background-color' field.
 
 #### **Static Code Analysis Issue 2**
 ![](Static-Code-Analysis-Issue2.png)
-
+- **Analysis**: Correctly updating a static field from a non-static method is tricky to get right and could easily lead to bugs if there are multiple class instances and/or multiple threads in play. Ideally, static fields are only updated from synchronized static methods.
+- **Recommendations**: 
+  
 #### **Static Code Analysis Issue 3**
 ![](Static-Code-Analysis-Issue3.png)
-
+- **Analysis**: Unexpected duplicate of color could led to the previously defined 'color' field to get override.
+- **Recommendations**: Remove the duplicate 'color' field.
 
 > _**[Sprint 4]** Discuss **future** refactoring and other design improvements your team would explore if the team had additional time._
 
