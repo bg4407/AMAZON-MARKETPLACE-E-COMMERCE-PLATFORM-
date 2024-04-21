@@ -3,11 +3,6 @@ geometry: margin=1in
 ---
 # PROJECT Design Documentation
 
-> _The following template provides the headings for your Design
-> Documentation.  As you edit each section make sure you remove these
-> commentary 'blockquotes'; the lines that start with a > character
-> and appear in the generated PDF in italics but do so only **after** all team members agree that the requirements for that section and current Sprint have been met. **Do not** delete future Sprint expectations._
-
 ## Team Information
 * Team name: BCNS
 * Team members
@@ -16,18 +11,16 @@ geometry: margin=1in
   * Borneil Gope
   * Cameron Marsh
 
-## Executive Summary
+## **Executive Summary**
 
 This is a project which creates a website for a food charity. In this website, the user is able to login as a user or an admin using a username and password. The admin is able to view the needs cupboard and add or delete needs from it. The Helper is able to view the needs in the needs cupboard that the admin has added. The Helper can also search for needs using a search bar and have access to view and modify the funding basket. Items in the funding basket persist even after the Helper logs out and logs back in. Users can also send feedback to the admin, which the admin can see after they log in. The users can "check out" needs when they have decided to contribute to them, and they can also see a history of previous needs they have contributed to that persists through log in and log outs.
 
-### Purpose
-> _**[Sprint 2 & 4] Provide a very brief statement about the project and the most important user group and user goals.
+### **Purpose**
 
 The U-Fund Chairty webpage will allow Helpers to donate money to causes and items in order to assist the food bank. This will
 allow people with money to spare to assist those who are in need.
 
-### Glossary and Acronyms
-> _**[Sprint 2 & 4]** Provide a table of terms and acronyms._
+### **Glossary and Acronyms**
 
 | Term    |            Definition               |
 |---------|-------------------------------------|
@@ -44,22 +37,16 @@ allow people with money to spare to assist those who are in need.
 | Cupboard|  Access to the needs                |
 
 
-## Requirements
+## **Requirements**
 
 This section describes the features of the application.
-
-> _In this section you do not need to be exhaustive and list every
-> story.  Focus on top-level features from the Vision document and
-> maybe Epics and critical Stories._
-
   - Admin can add, remove, and modify needs in the needs cupboard
   - Helper can browse needs in the needs cupboard and search using keywords
   - Helper can add/delete products from their cart
   - Helper can log in to an existing account with username and password, or register should the account not exist
   - Helper can checkout their needs from the basket
 
-### Definition of MVP
-> _**[Sprint 2 & 4]** Provide a simple description of the Minimum Viable Product._
+### **Definition of MVP**
 
   - Minimal Authentication for Helper/U-fund Manager login & logout
     - A Helper can create a new account with a new username and password
@@ -84,7 +71,7 @@ This section describes the features of the application.
     - The contents of the Helper basket in the basket will remain the same when the Helper log out and log back in.
     - When a Helper purchase all the need from the Cupboard, another Helper will not be able to see the needs from the Cupboard anymore until the Admin restock
 
-### MVP Features
+### **MVP Features**
 
 **Create New Need:** AS a Developer I WANT to submit a request to create a new need (name [unique], cost, quantity, type)
 SO THAT it is added to the cupboard.
@@ -127,7 +114,7 @@ it SO THAT I can effectively contribute to the organization.
 
 **Check Out Needs:** AS a Helper I WANT to buy the needs SO THAT I can efficiently assist and address the unique challenges faced by the non-profit organization.
 
-### Enhancements
+### **Enhancements**
 
 **View Purchases:** AS a Helper I WANT to view a history of my past purchases so that I can track what 
 needs I have contributed to and make informed decisions.
@@ -143,18 +130,17 @@ feedback messages SO THAT I can keep informed of the Helpers' concerns and sugge
 - For Helpers, an ability to send a feedback message is added. And the U-Fund Manager has access to a new page 
 in which all feedback messages sent from the Helpers can be viewed.
 
-## Application Domain
+## **Application Domain**v
 
 This section describes the application domain.
 
 ![Domain Model](Domain-Model.png)
 
-
-## Architecture and Design
+## **Architecture and Design**
 
 This section describes the application architecture.
 
-### Summary
+### **Summary**
 
 The following Tiers/Layers model shows a high-level view of the webapp's architecture. 
 
@@ -169,14 +155,14 @@ The View is the client-side SPA built with Angular utilizing HTML, CSS and TypeS
 Both the ViewModel and Model are built using Java and Spring Framework. Details of the components within these tiers are supplied below.
 
 
-### Overview of User Interface
+### **Overview of User Interface**
 
 This section describes the web interface flow; this is how the user views and interacts with the web application.
 
 > _Provide a summary of the application's user interface.  Describe, from the user's perspective, the flow of the pages in the web application._
 
 
-### View Tier
+### **View Tier**
 > _**[Sprint 4]** Provide a summary of the View Tier UI of your architecture.
 > Describe the types of components in the tier and describe their
 > responsibilities.  This should be a narrative description, i.e. it has
@@ -194,8 +180,7 @@ This section describes the web interface flow; this is how the user views and in
  >* _Correct labeling of relationships with proper notation for the relationship type, multiplicities, and navigation information will be important._
  >* _Include other details such as attributes and method signatures that you think are needed to support the level of detail in your discussion._
 
-### ViewModel Tier
-
+### **ViewModel Tier**
 - **NeedController:** Responds to HTML requests for the Needs resource. It connects the Need UI to the Need model
 in the backend and will create, update, and get needs from the needs cupboard as necessary, all by accessing
 methods in NeedDAO objects.
@@ -203,6 +188,10 @@ methods in NeedDAO objects.
 - **HelperController:** Responds to HTML requests for the Helper resource. It connects the Funding Basket and Helper
 related UI to the backend, with functionality to create, get and authenticate helpers as well as manipulate
 a Helper's Funding Basket, all by accessing methods in HelperDAO objects.
+
+**FeedbackController:** Responds to HTML requests for the Feedback resource. It connects the Feedback UI to the Feedback model
+in the backend, with functionality for helpers to send feedback and managers to view feedback as necessary, all by acessing
+methods in FeedbackDAO objects.
 
 - **NeedDAO:** An interface for the Data Access Object used to access and modify the underlying storage
 for the Needs Cupboard.
@@ -216,6 +205,12 @@ Helpers and their funding baskets.
 - **HelperFileDAO:** the specific implementation of HelperDAO. Access the underlying storage to create, 
 get, and update Helpers as well as their Funding Baskets. Also authenticates their login credentials.
 
+- **FeedbackDAO:** An interface for the Data Access Object used to access and modify the underlying storage
+allocated for the feedback.
+
+- **FeedbackFileDAO:** The specific implementation of FeedbackDAO. Contains functionality for helpers to send feedback
+and managers to view feedback as necessary.
+
 > _**[Sprint 4]** Provide a summary of this tier of your architecture. This
 > section will follow the same instructions that are given for the View
 > Tier above._
@@ -225,7 +220,7 @@ get, and update Helpers as well as their Funding Baskets. Also authenticates the
 > 
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
-### Model Tier
+### **Model Tier**
 
 **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
@@ -277,29 +272,36 @@ to accompany them, such as the user.service and feedback.service files. The hier
 > Analysis Tool (SonarQube) and provide your analysis and recommendations.  
 > Include any relevant screenshot(s) with each area._
 
+### **Static Code Analysis Overall Score**
+![](Static-Code-Analysis-Overall.png)
+
+#### **Static Code Analysis Issue 1**
+![](Static-Code-Analysis-Issue1.png)
+
+#### **Static Code Analysis Issue 2**
+![](Static-Code-Analysis-Issue2.png)
+
+#### **Static Code Analysis Issue 3**
+![](Static-Code-Analysis-Issue3.png)
+
+
 > _**[Sprint 4]** Discuss **future** refactoring and other design improvements your team would explore if the team had additional time._
 
-## Testing
-> _This section will provide information about the testing performed and the results of the testing._
+## **Testing**
 
-### Acceptance Testing
-> **[Sprint 2 & 4]** Report on the number of user stories that have passed all their
-> acceptance criteria tests, the number that have some acceptance
-> criteria tests failing, and the number of user stories that
-> have not had any testing yet. Highlight the issues found during
-> acceptance testing and if there are any concerns._
-
-- **23** user stories in total, covering:
+### **Acceptance Testing**
+- **29** user stories in total, covering:
   - Admins being able to edit needs from the cupboard
   - Helpers being able to login/creating their account
   - Helpers being able to edit needs from their basket
   - Helpers being able to checkout their basket
   - Helpers being able to search for needs
   - Persistence of the shopping carts
+  - 10% Features: creating/viewing feedbacks and display purchase history
 
 **All user stories have passed their acceptance criteria tests.**
 
-### Unit Testing and Code Coverage
+### **Unit Testing and Code Coverage**
 
 **Strategy**
 We targeted 90% code coverage across the project with our unit tests because 
@@ -321,9 +323,7 @@ this would ensureminimal gaps in the coverage while still being achievable.
 ![Replace with your Persistence Tier Code Coverage, etc.](Persistence-Code-Coverage.png)
   - **Persistence**: The persistence unit test is well done.
  
-## Ongoing Rationale
->_**[Sprint 1, 2, 3 & 4]** Throughout the project, provide a time stamp **(yyyy/mm/dd): Sprint # and description** of any _**major**_ team decisions or design milestones/changes and corresponding justification._
-
+## **Ongoing Rationale**
   - (2024/2/10): Sprint 1
     - The 10% feature will be Helper Feedback and Purchase History Page
   - (2024/3/19): Sprint 2

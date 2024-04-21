@@ -14,7 +14,6 @@ body {
 .left-section {
   background: url('https://i.imgur.com/MYZd7of.png') no-repeat center center;
   background-color: lavender;
-  padding: 100px;
   margin-top:10%;
   max-width: 500px;
   
@@ -32,14 +31,13 @@ body {
 }
 
 .login-container {
+    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgb(10 75 90);
     width: 100%;
     max-width: 450px;
-    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
-    
 }
 
 .login-form h2 {
@@ -55,14 +53,13 @@ body {
 
 
 .signUp-container {
+    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgb(10 75 90);
     width: 100%;
-    max-width: 450px;
-    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
-    
+    max-width: 450px;    
 }
 
 .signUp-form h2 {
