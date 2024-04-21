@@ -236,7 +236,6 @@ baskets from the underlying storage into Helper instances.
 
 ## OO Design Principles
 
-> _**[Sprint 1]** Name and describe the initial OO Principles that your team has considered in support of your design (and implementation) for this first Sprint._
 
 **Single Responsibility:** (created a domain model, separating classes based on their individual purpose, which follows Single Responsibilty as each class serves one unique purpose)
 
@@ -261,7 +260,6 @@ baskets from the underlying storage into Helper instances.
 > _**[Sprint 4]** Discuss **future** refactoring and other design improvements your team would explore if the team had additional time._
 
 ## Testing
-> _This section will provide information about the testing performed and the results of the testing._
 
 ### Acceptance Testing
 - **29** user stories in total, covering:
