@@ -149,10 +149,6 @@ This section describes the application domain.
 
 ![Domain Model](Domain-Model.png)
 
-> _**[Sprint 2 & 4]** Provide a high-level overview of the domain for this application. You
-> can discuss the more important domain entities and their relationship
-> to each other._
-
 
 ## Architecture and Design
 
@@ -161,8 +157,6 @@ This section describes the application architecture.
 ### Summary
 
 The following Tiers/Layers model shows a high-level view of the webapp's architecture. 
-**NOTE**: detailed diagrams are required in later sections of this document.
-> _**[Sprint 1]** (Augment this diagram with your **own** rendition and representations of sample system classes, placing them into the appropriate M/V/VM (orange rectangle) tier section. Focus on what is currently required to support **Sprint 1 - Demo requirements**. Make sure to describe your design choices in the corresponding _**Tier Section**_ and also in the _**OO Design Principles**_ section below.)_
 
 ![The Tiers & Layers of the Architecture](architecture-tiers-and-layers.png)
 
@@ -201,7 +195,6 @@ This section describes the web interface flow; this is how the user views and in
  >* _Include other details such as attributes and method signatures that you think are needed to support the level of detail in your discussion._
 
 ### ViewModel Tier
-> _**[Sprint 1]** List the classes supporting this tier and provide a description of there purposes_
 
 - **NeedController:** Responds to HTML requests for the Needs resource. It connects the Need UI to the Need model
 in the backend and will create, update, and get needs from the needs cupboard as necessary, all by accessing
@@ -233,7 +226,6 @@ get, and update Helpers as well as their Funding Baskets. Also authenticates the
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
 ### Model Tier
-> _**[Sprint 1]** List the classes supporting this tier and provide a description of there purpose._
 
 **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
@@ -254,21 +246,30 @@ baskets from the underlying storage into Helper instances.
 
 ## OO Design Principles
 
-> _**[Sprint 1]** Name and describe the initial OO Principles that your team has considered in support of your design (and implementation) for this first Sprint._
+**Single Responsibility:** The project was guided by our domain model diagram which allowed us
+to create classes separating each major aspect of the project's functionality. For example,
+we have feedback classes like FeedbackController to handle the HTTP requests and connecting to the JSON instead of
+integrating that functionality into the already-existing Helper (as it is only meant to act as a java representation of the Helper's fields). 
 
-**Single Responsibility:** (created a domain model, separating classes based on their individual purpose, which follows Single Responsibilty as each class serves one unique purpose)
+**Open/Closed:** Our Data Access Object classes are extensions of interfaces, including
+FeedbackDAO, HelperDAO and NeedDAO. This allowed us to add functionality to the Data Access
+Objects while not modifying their base functionality and ensuring the most important
+parts always work the same.
 
-**Open/Closed:** (Incorporated restapi classes into projects which used encapsulation to keep some modules public and others private, which protects data and enhances security)
 
-> _**[Sprint 2, 3 & 4]** Will eventually address upto **4 key OO Principles** in your final design. Follow guidance in augmenting those completed in previous Sprints as indicated to you by instructor. Be sure to include any diagrams (or clearly refer to ones elsewhere in your Tier sections above) to support your claims._
+**Low Coupling:** Unnecessary interdependence between classes is reduced by encapsulating the necessary data
+for each each method within the same class, or connecting it to abstractions where possible. For example the Helper class contains the shopping cart which allows shopping cart operations to be handled without depending on another class. The separation of DAOs from Controllers via interfaces also prevents a direct dependency on one another. Below, the attributes of a Helper instance are shown.
+![alt text](image-1.png) 
 
-**Low Coupling:** (describe how DAO interfaces reduce coupling between Controllers and DAOs)
 
-**Dependency Inversion/Injection:** (describe how DAO interfaces are injected into Controller classes' contructors rather than being initialized in the controller)
 
-**Pure Fabrication:** (describe how HelperFileDAO/NeedFileDAO doesn't represent a real entity but is created for the purpose of separating the methods that access Helper and Need storage)
+**Pure Fabrication:** The project makes use of several functionality-focused classes
+that aid the representation-focused classes. For example, HelperController, which handles
+actual Helper instances, creates a HelperDAO instance to manage the access to the storage.
+In addition, many vital components of the UI have functionality-focused Services developed
+to accompany them, such as the user.service and feedback.service files. The hierarchy is shown below in this screen grab from the UML model:
 
-> _**[Sprint 3 & 4]** OO Design Principles should span across **all tiers.**_
+![alt text](image.png)
 
 ## Static Code Analysis/Future Design Improvements
 > _**[Sprint 4]** With the results from the Static Code Analysis exercise, 
