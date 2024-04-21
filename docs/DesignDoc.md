@@ -274,10 +274,6 @@ to accompany them, such as the user.service and feedback.service files. The hier
 ![alt text](image.png)
 
 ## Static Code Analysis/Future Design Improvements
-> _**[Sprint 4]** With the results from the Static Code Analysis exercise, 
-> **Identify 3-4** areas within your code that have been flagged by the Static Code 
-> Analysis Tool (SonarQube) and provide your analysis and recommendations.  
-> Include any relevant screenshot(s) with each area._
 
 ### **Static Code Analysis Overall Score**
 ![](Static-Code-Analysis-Overall.png)
