@@ -314,7 +314,7 @@ to accompany them, such as the user.service and feedback.service files. The hier
 
 **Strategy**
 We targeted 90% code coverage across the project with our unit tests because 
-this would ensureminimal gaps in the coverage while still being achievable.
+this would ensure minimal gaps in the coverage while still being achievable.
 
 **U-fund API Class Level Code Coverage:**
 ![Replace with Class Level Code Coverage, etc.](Code-Coverage.png)
