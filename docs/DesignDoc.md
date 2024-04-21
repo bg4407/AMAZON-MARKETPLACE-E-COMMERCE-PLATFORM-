@@ -257,6 +257,19 @@ baskets from the underlying storage into Helper instances.
 > Analysis Tool (SonarQube) and provide your analysis and recommendations.  
 > Include any relevant screenshot(s) with each area._
 
+### **Static Code Analysis Overall Score**
+![](Static-Code-Analysis-Overall.png)
+
+#### **Static Code Analysis Issue 1**
+![](Static-Code-Analysis-Issue1.png)
+
+#### **Static Code Analysis Issue 2**
+![](Static-Code-Analysis-Issue2.png)
+
+#### **Static Code Analysis Issue 3**
+![](Static-Code-Analysis-Issue3.png)
+
+
 > _**[Sprint 4]** Discuss **future** refactoring and other design improvements your team would explore if the team had additional time._
 
 ## **Testing**
