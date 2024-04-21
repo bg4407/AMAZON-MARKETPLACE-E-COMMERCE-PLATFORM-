@@ -195,6 +195,10 @@ methods in NeedDAO objects.
 related UI to the backend, with functionality to create, get and authenticate helpers as well as manipulate
 a Helper's Funding Basket, all by accessing methods in HelperDAO objects.
 
+**FeedbackController:** Responds to HTML requests for the Feedback resource. It connects the Feedback UI to the Feedback model
+in the backend, with functionality for helpers to send feedback and managers to view feedback as necessary, all by acessing
+methods in FeedbackDAO objects.
+
 - **NeedDAO:** An interface for the Data Access Object used to access and modify the underlying storage
 for the Needs Cupboard.
 
@@ -206,6 +210,12 @@ Helpers and their funding baskets.
 
 - **HelperFileDAO:** the specific implementation of HelperDAO. Access the underlying storage to create, 
 get, and update Helpers as well as their Funding Baskets. Also authenticates their login credentials.
+
+- **FeedbackDAO:** An interface for the Data Access Object used to access and modify the underlying storage
+allocated for the feedback.
+
+- **FeedbackFileDAO:** The specific implementation of FeedbackDAO. Contains functionality for helpers to send feedback
+and managers to view feedback as necessary.
 
 > _**[Sprint 4]** Provide a summary of this tier of your architecture. This
 > section will follow the same instructions that are given for the View
