@@ -136,11 +136,6 @@ This section describes the application domain.
 
 ![Domain Model](Domain-Model.png)
 
-> _**[Sprint 2 & 4]** Provide a high-level overview of the domain for this application. You
-> can discuss the more important domain entities and their relationship
-> to each other._
-
-
 ## **Architecture and Design**
 
 This section describes the application architecture.
@@ -148,7 +143,6 @@ This section describes the application architecture.
 ### **Summary**
 
 The following Tiers/Layers model shows a high-level view of the webapp's architecture. 
-**NOTE**: detailed diagrams are required in later sections of this document.
 
 ![The Tiers & Layers of the Architecture](architecture-tiers-and-layers.png)
 
@@ -199,6 +193,10 @@ methods in NeedDAO objects.
 related UI to the backend, with functionality to create, get and authenticate helpers as well as manipulate
 a Helper's Funding Basket, all by accessing methods in HelperDAO objects.
 
+- **FeedbackController:** Responds to HTML requests for the Feedback resource. It connects the Feedback UI to the Feedback model
+in the backend, with functionality for helpers to send feedback and managers to view feedback as necessary, all by acessing
+methods in FeedbackDAO objects.
+
 - **NeedDAO:** An interface for the Data Access Object used to access and modify the underlying storage
 for the Needs Cupboard.
 
@@ -211,6 +209,12 @@ Helpers and their funding baskets.
 - **HelperFileDAO:** the specific implementation of HelperDAO. Access the underlying storage to create, 
 get, and update Helpers as well as their Funding Baskets. Also authenticates their login credentials.
 
+- **FeedbackDAO:** An interface for the Data Access Object used to access and modify the underlying storage
+allocated for the feedback.
+
+- **FeedbackFileDAO:** The specific implementation of FeedbackDAO. Contains functionality for helpers to send feedback
+and managers to view feedback as necessary.
+
 > _**[Sprint 4]** Provide a summary of this tier of your architecture. This
 > section will follow the same instructions that are given for the View
 > Tier above._
@@ -221,13 +225,17 @@ get, and update Helpers as well as their Funding Baskets. Also authenticates the
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
 ### **Model Tier**
-**Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
+- **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
 storage into Need instances.
 
 - **Helper:** Acts as a Java representation for a single Helper, its data, and its Funding Basket.
 Works in tandem with HelperController and HelperFileDAO to load Helpers and their funding
 baskets from the underlying storage into Helper instances.
+
+- **Feedback:** Acts as a Java representation of a single feedback message and its attributes. Works in tandem
+with FeedbackFileDAO and FeedbackController such that feedback messages are loaded from the underlying 
+storage into Feedback instances.
 
 > _**[Sprint 2, 3 & 4]** Provide a summary of this tier of your architecture. This
 > section will follow the same instructions that are given for the View
@@ -240,20 +248,30 @@ baskets from the underlying storage into Helper instances.
 
 ## OO Design Principles
 
+**Single Responsibility:** The project was guided by our domain model diagram which allowed us
+to create classes separating each major aspect of the project's functionality. For example,
+we have feedback classes like FeedbackController to handle the HTTP requests and connecting to the JSON instead of
+integrating that functionality into the already-existing Helper (as it is only meant to act as a java representation of the Helper's fields). 
 
-**Single Responsibility:** (created a domain model, separating classes based on their individual purpose, which follows Single Responsibilty as each class serves one unique purpose)
+**Open/Closed:** Our Data Access Object classes are extensions of interfaces, including
+FeedbackDAO, HelperDAO and NeedDAO. This allowed us to add functionality to the Data Access
+Objects while not modifying their base functionality and ensuring the most important
+parts always work the same.
 
-**Open/Closed:** (Incorporated restapi classes into projects which used encapsulation to keep some modules public and others private, which protects data and enhances security)
 
-> _**[Sprint 2, 3 & 4]** Will eventually address upto **4 key OO Principles** in your final design. Follow guidance in augmenting those completed in previous Sprints as indicated to you by instructor. Be sure to include any diagrams (or clearly refer to ones elsewhere in your Tier sections above) to support your claims._
+**Low Coupling:** Unnecessary interdependence between classes is reduced by encapsulating the necessary data
+for each each method within the same class, or connecting it to abstractions where possible. For example the Helper class contains the shopping cart which allows shopping cart operations to be handled without depending on another class. The separation of DAOs from Controllers via interfaces also prevents a direct dependency on one another. Below, the attributes of a Helper instance are shown.
+![alt text](image-1.png) 
 
-**Low Coupling:** (describe how DAO interfaces reduce coupling between Controllers and DAOs)
 
-**Dependency Inversion/Injection:** (describe how DAO interfaces are injected into Controller classes' contructors rather than being initialized in the controller)
 
-**Pure Fabrication:** (describe how HelperFileDAO/NeedFileDAO doesn't represent a real entity but is created for the purpose of separating the methods that access Helper and Need storage)
+**Pure Fabrication:** The project makes use of several functionality-focused classes
+that aid the representation-focused classes. For example, HelperController, which handles
+actual Helper instances, creates a HelperDAO instance to manage the access to the storage.
+In addition, many vital components of the UI have functionality-focused Services developed
+to accompany them, such as the user.service and feedback.service files. The hierarchy is shown below in this screen grab from the UML model:
 
-> _**[Sprint 3 & 4]** OO Design Principles should span across **all tiers.**_
+![alt text](image.png)
 
 ## Static Code Analysis/Future Design Improvements
 > _**[Sprint 4]** With the results from the Static Code Analysis exercise, 
