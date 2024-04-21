@@ -195,7 +195,7 @@ methods in NeedDAO objects.
 related UI to the backend, with functionality to create, get and authenticate helpers as well as manipulate
 a Helper's Funding Basket, all by accessing methods in HelperDAO objects.
 
-**FeedbackController:** Responds to HTML requests for the Feedback resource. It connects the Feedback UI to the Feedback model
+- **FeedbackController:** Responds to HTML requests for the Feedback resource. It connects the Feedback UI to the Feedback model
 in the backend, with functionality for helpers to send feedback and managers to view feedback as necessary, all by acessing
 methods in FeedbackDAO objects.
 
@@ -227,13 +227,17 @@ and managers to view feedback as necessary.
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
 ### **Model Tier**
-**Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
+- **Need:** Acts as a Java representation of a single need and its attributes. Works in tandem
 with NeedFileDAO and NeedController such that needs are loaded from the underlying 
 storage into Need instances.
 
 - **Helper:** Acts as a Java representation for a single Helper, its data, and its Funding Basket.
 Works in tandem with HelperController and HelperFileDAO to load Helpers and their funding
 baskets from the underlying storage into Helper instances.
+
+- **Feedback:** Acts as a Java representation of a single feedback message and its attributes. Works in tandem
+with FeedbackFileDAO and FeedbackController such that feedback messages are loaded from the underlying 
+storage into Feedback instances.
 
 > _**[Sprint 2, 3 & 4]** Provide a summary of this tier of your architecture. This
 > section will follow the same instructions that are given for the View
