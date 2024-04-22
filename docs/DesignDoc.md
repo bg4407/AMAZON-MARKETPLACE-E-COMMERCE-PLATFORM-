@@ -157,18 +157,21 @@ Both the ViewModel and Model are built using Java and Spring Framework. Details 
 
 ### **Overview of User Interface**
 
-This section describes the web interface flow; this is how the user views and interacts with the web application.
-
-> _Provide a summary of the application's user interface.  Describe, from the user's perspective, the flow of the pages in the web application._
+- When a user first enters the website, they will be directed to the login page 
+where they either register for an accoutn with a unique username, or login with their existing credentials. 
+- If the user is a Helper, they will be directed to the cupboard which displays a list of available needs.
+- If the user is the Admin they will be directed to the admin page where they can create/edit the needs to display in the cupboard.
+- If the Helper see a needs they want to contribute, they can click on that product, where they will be directed to that needs detail so that they can add that specific needs to their cart through the "add to cart" button.
+- Once the Helper has added all they want, they then can click the "cart" button to naviagte to their basket. 
+- This basket page displays the products in the cart and the quantity of each.
+- The customer can then press checkout, which will clear their cart, and the contents will be added to the basket. 
+- The customer can also leave a review, which will be sent to the admin review logs.
+- The admin will be able to view a list of reviews from Helpers.
+- The user can both press logout to exit their current account. If the user is a Helper, the contents of their basket won't be deleted.
+- Only the Helper is able to delete their accounts from the database if they want to.
 
 
 ### **View Tier**
-> _**[Sprint 4]** Provide a summary of the View Tier UI of your architecture.
-> Describe the types of components in the tier and describe their
-> responsibilities.  This should be a narrative description, i.e. it has
-> a flow or "story line" that the reader can follow._
-
-
 
 ### **Sequence Diagram**
 ![](Sequence-Diagram.png)
@@ -177,12 +180,6 @@ This section describes the web interface flow; this is how the user views and in
 ![](Feedback-Sequence-Diagram.png)
 
 
-
-> _**[Sprint 4]** To adequately show your system, you will need to present the **class diagrams** where relevant in your design. Some additional tips:_
- >* _Class diagrams only apply to the **ViewModel** and **Model** Tier_
->* _A single class diagram of the entire system will not be effective. You may start with one, but will be need to break it down into smaller sections to account for requirements of each of the Tier static models below._
- >* _Correct labeling of relationships with proper notation for the relationship type, multiplicities, and navigation information will be important._
- >* _Include other details such as attributes and method signatures that you think are needed to support the level of detail in your discussion._
 
 ### **ViewModel Tier**
 - **NeedController:** Responds to HTML requests for the Needs resource. It connects the Need UI to the Need model
@@ -215,13 +212,6 @@ allocated for the feedback.
 - **FeedbackFileDAO:** The specific implementation of FeedbackDAO. Contains functionality for helpers to send feedback
 and managers to view feedback as necessary.
 
-> _**[Sprint 4]** Provide a summary of this tier of your architecture. This
-> section will follow the same instructions that are given for the View
-> Tier above._
-
-> _At appropriate places as part of this narrative provide **one** or more updated and **properly labeled**
-> static models (UML class diagrams) with some details such as critical attributes and methods._
-> 
 ![Replace with your ViewModel Tier class diagram 1, etc.](ViewModel-Tier.png)
 
 ### **Model Tier**
@@ -237,13 +227,6 @@ baskets from the underlying storage into Helper instances.
 with FeedbackFileDAO and FeedbackController such that feedback messages are loaded from the underlying 
 storage into Feedback instances.
 
-> _**[Sprint 2, 3 & 4]** Provide a summary of this tier of your architecture. This
-> section will follow the same instructions that are given for the View
-> Tier above._
-
-> _At appropriate places as part of this narrative provide **one** or more updated and **properly labeled**
-> static models (UML class diagrams) with some details such as critical attributes and methods._
-> 
 ![Replace with your Model Tier class diagram 1, etc.](UML.png)
 
 ## OO Design Principles
